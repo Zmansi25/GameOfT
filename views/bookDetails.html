@@ -1,0 +1,25 @@
+<div style="font-family: 'Droid Serif', serif; font-size:1.5em;opacity:0.85">
+   <div class="panel-group">
+      <div class="panel panel-default">
+         <div class="panel-heading">
+            <h2 style="text-align:center"><i class="fa fa-book"  aria-hidden="true"></i> Book Details</h2>
+         </div>
+         <div class="panel-body">
+            <p><strong>Book :</strong> <i>{{currentBook.book.name}}</i></p>
+            <p><strong>ISBN :</strong> {{currentBook.book.isbn}}</p>
+            <p><strong>Number of Pages :</strong> {{currentBook.book.numberOfPages}}</p>
+            <p><strong>Author of the book :</strong> </p>
+            <p ng-repeat="author in currentBook.book.authors">{{$index + 1}}. {{author}}</p>
+            <p><strong>Country :</strong> {{currentBook.book.country}}</p>
+            <p><strong>Type :</strong> {{currentBook.book.mediaType}}</p>
+            <p><strong>Publisher :</strong> {{currentBook.book.publisher}}</p>
+            <p><strong>Released on :</strong> {{currentBook.book.released |  date : "fullDate"}}</p>
+            <p><strong>POV Characters :</strong></p>
+            <p ng-repeat="i in currentBook.book.povchar">{{i}}</p>
+         </div>
+         <div class="panel-footer">
+            <a href="#/list" class="btn btn-default "></span> Go Back</a>
+         </div>
+      </div>
+   </div>
+</div>

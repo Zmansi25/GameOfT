@@ -1,0 +1,29 @@
+<div font-family: 'Droid Serif', serif;">
+  <div class="filter">
+    <label style="font-size:20px;"> <strong>Search : </strong></label>
+    <input  id=common ng-model=search.name type="text" class="form-control" placeholder="Search by name" aria-label="...">
+  </div>
+  <br>
+  <hr>
+  <div class="filter">
+    <p style="font-size:20px;"><strong>Filter :</strong> </p>
+    <br>
+    <label><i class="fa fa-book"  aria-hidden="true"></i> Books <input type="checkbox" ng-model="main.showbook" checked></label> <br>
+    <label><i class="fa fa-flag" aria-hidden="true"></i> Houses <input type="checkbox" ng-model="main.showhouse"></label><br>
+    <label><i class="fa fa-user" aria-hidden="true"></i> Characters <input type="checkbox" ng-model="main.showchar"></label>
+  </div>
+  <hr>
+  <div class="jumbotron" ng-if="main.showbook==true || main.showchar==true || main.showhouse==true ">
+    <div ng-repeat="data in main.bookcharhouse | orderBy:'name':main.reverse | filter:search">
+      <a ng-href="#/book/{{ data.urlid }}">
+        <books-data ng-if="data.dirtype == 'Book' && main.showbook==true "></books-data>
+      </a>
+      <a ng-href="#/character/{{ data.urlid }}">
+        <characters-data ng-if="data.dirtype == 'Char' && data.name && main.showchar==true"></characters-data>
+      </a>
+      <a ng-href="#/house/{{ data.urlid }}">
+        <houses-data ng-if="data.dirtype == 'House' && main.showhouse==true"></houses-data>
+      </a>
+    </div>
+  </div>
+</div>

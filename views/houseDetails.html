@@ -1,0 +1,29 @@
+<div class="panel-group" style="font-family: 'Droid Serif', serif; font-size:1.5em;opacity:0.85">
+   <div class="panel panel-default">
+      <div class="panel-heading">
+         <h2 style="text-align:center"><i class="fa fa-flag" aria-hidden="true"></i> House Details</h2>
+      </div>
+      <div class="panel-body">
+         <p><strong>House Name : </strong>{{currentHouse.house.name}}</p>
+         <p><strong>From Region : </strong>{{currentHouse.house.region}}</p>
+         <p ng-if="currentHouse.house.founded"><strong>Founded in: </strong>{{currentHouse.house.founded}}</p>
+         <p ng-if="currentHouse.house.founder"><strong>Founded by : </strong>{{currentHouse.house.founderName}}</p>
+         <p ng-if="currentHouse.house.titles.length > 0 && currentHouse.house.titles[0]!= '' "><strong>Titles : </strong>
+         <p ng-if="currentHouse.house.titles.length > 0 && currentHouse.house.titles[0]!= '' " ng-repeat="i in currentHouse.house.titles">{{i}}</p>
+         </p>
+         <p ng-if="currentHouse.house.currentLord"><strong>Current Lord : </strong>{{currentHouse.house.currentLordName}}</p>
+         <p ng-if="currentHouse.house.heir"><strong>Heir : </strong>{{currentHouse.house.heirName}}</p>
+         <p ng-if="currentHouse.house.seats.length > 0 && currentHouse.house.seats[0]!= '' "><strong>Seats : </strong>
+         <p ng-if="currentHouse.house.seats.length > 0 " ng-repeat="i in currentHouse.house.seats">{{i}}</p>
+         </p>
+         <p ng-if="currentHouse.house.swornMembers.length > 0 && currentHouse.house.swornMembers[0]!= '' "><strong>Sworn members of House : </strong>
+         <p ng-if="currentHouse.house.swornMembers.length > 0 && currentHouse.house.swornMembers[0]!= '' " ng-repeat="i in currentHouse.house.swornMembersName track by $index">{{i}}</p>
+         </p>
+         <p ng-if="currentHouse.house.coatOfArms"><strong>Coat of Arms : </strong>{{currentHouse.house.coatOfArms}}</p>
+         <br>
+      </div>
+      <div class="panel-footer">
+         <a href="#/list" class="btn btn-default "></span> Go Back</a>
+      </div>
+   </div>
+</div>

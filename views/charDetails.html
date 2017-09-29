@@ -1,0 +1,32 @@
+<div style="font-family: 'Droid Serif', serif; font-size:1.5em;opacity:0.85">
+   <div class="panel-group">
+      <div class="panel panel-default">
+         <div class="panel-heading">
+            <h2 style="text-align:center"><i class="fa fa-user" aria-hidden="true"></i> Character Details</h2>
+         </div>
+         <div class="panel-body">
+            <p ng-if="currentCharacter.character.name"><strong>Character Name : </strong> {{currentCharacter.character.name}}</p>
+            <p ng-if="currentCharacter.character.gender"><strong>Gender :</strong> {{currentCharacter.character.gender}}</p>
+            <p ng-if="currentCharacter.character.titles && currentCharacter.character.titles[0]!= '' "><strong>Titles :</strong>
+            <p ng-if="currentCharacter.character.titles && currentCharacter.character.titles[0]!= '' " ng-repeat="i in currentCharacter.character.titles">{{$index+1}}. {{i}}</p>
+            </p>
+            <p ng-if="currentCharacter.character.born"><strong>Born on : </strong>{{currentCharacter.character.born}}</p>
+            <p ng-if="currentCharacter.character.died"><strong>Died on : </strong>{{currentCharacter.character.died}}</p>
+            <p ng-if="currentCharacter.character.culture"><strong>Culture : </strong>{{currentCharacter.character.culture}}</p>
+            <p ng-if="currentCharacter.character.father"><strong>Father : </strong>{{currentCharacter.character.fatherName}}</p>
+            <p ng-if="currentCharacter.character.mother"><strong>Mother : </strong>{{currentCharacter.character.motherName}}</p>
+            <p ng-if="currentCharacter.character.spouse"><strong>Spouse : </strong>{{currentCharacter.character.spouseName}}</p>
+            <p ng-if="currentCharacter.character.tvSeries.length > 0 && currentCharacter.character.tvSeries[0]!= '' "><strong>Appeared in seasons : </strong>
+            <p ng-repeat="i in currentCharacter.character.tvSeries">{{i}}</p>
+            </p>
+            <p ng-if="currentCharacter.character.playedBy.length > 0 && currentCharacter.character.playedBy[0]!= '' "><strong>Played by actor : </strong>{{currentCharacter.character.playedBy[0]}}</p>
+            <p ng-if="currentCharacter.character.books.length > 0"><strong>Books : </strong>
+            <p ng-repeat="i in currentCharacter.character.charbookNames">{{i}}</p>
+            </p>
+         </div>
+         <div class="panel-footer">
+            <a href="#/list" class="btn btn-default " ></span> Go Back</a>
+         </div>
+      </div>
+   </div>
+</div>
